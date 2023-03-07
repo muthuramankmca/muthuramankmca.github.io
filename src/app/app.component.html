@@ -1,0 +1,67 @@
+
+
+
+
+
+
+<div class="absolute bg-slate-100 w-full top-0 left-0 h-screen z-50 {{isSidebarShowing?'flex':' hidden'}}">
+  <div class= " w-full md:max-w-sm shadow-2xl">
+    <div class=" p-5  flex flex-wrap justify-between">
+      <svg (click)="this.closeSideBar()"xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </div>
+     <div>
+        <div class="px-5">
+         <app-htitle></app-htitle>
+        </div>
+        <div class="px-5 z-40">
+          <app-menu></app-menu>
+        </div>
+     </div>
+    </div>
+  <div  (click)="this.closeSideBar()"class="bg-gray-900 hidden md:block md:w-full opacity-60">
+  </div>
+</div>
+
+
+
+
+<header class="  absolute w-full">
+  <div class="bg-slate-100 hidden lg:block">
+      <div class="container bg-slate-100">
+         <app-htitle></app-htitle>
+     </div>
+  </div>
+<div class=" px-5 w-full {{isMenuScrolled?'fixed top-0 w-full bg-white shadow-xl animate-slideInDown animate-faster':'pt-10'}}">
+  <div class="container px-5 mx-auto flex flex-wrap items-center justify-between {{isMenuScrolled?'':'border '}} text-white bg-green-600 border-emerald-500 border-opacity-30   rounded-lg ">
+       <a href="" >
+          <img src="../assets/Images/download.png">
+       </a>
+      <div class="lg:hidden">
+            <svg  (click)="this.openSideBar()"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </div>
+          <div class="">
+           <app-menu class="hidden lg:block "></app-menu>
+          </div>
+  </div>
+</div>
+</header>
+
+
+
+
+
+<button *ngIf="isMenuScrolled" (click)="scrollToTop()"
+class=" flex text-white transition-all duration-300 fixed bottom-5 right-5 w-10 h-10 bg-emerald-500 hover:bg-emerald-800 rounded-full"> 
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6 m-auto">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+</svg>
+
+</button>
+
+<router-outlet></router-outlet>
+<br><br>
+<app-footer></app-footer>
