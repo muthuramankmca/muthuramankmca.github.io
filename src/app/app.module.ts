@@ -1,6 +1,7 @@
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import{FormsModule}from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -53,6 +54,7 @@ import { ManagementComponent } from './shared/management/management.component';
     NgxExtendedPdfViewerModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FormsModule,
     PdfJsViewerModule ,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),

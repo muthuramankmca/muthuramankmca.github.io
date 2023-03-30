@@ -1,4 +1,5 @@
-import { Component ,HostListener} from '@angular/core';
+import { Component ,HostListener, OnInit} from '@angular/core';
+
 
 
 
@@ -7,11 +8,22 @@ import { Component ,HostListener} from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent  implements OnInit{
+
+
+
+
   pdfSrc = "https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf";
 constructor(){
   
 }
+  
+  ngOnInit(): void {
+    
+  }
+  
+  
+  
 
 
 
